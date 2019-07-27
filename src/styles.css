@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+.btn-escuela{
+    background-color: rgb(209, 62, 49) !important;
+    color: rgba(255, 255, 255,1) !important;
+}
+
+.btn-escuela:hover{
+    background-color: rgba(209, 62, 49, 0.8) !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+}

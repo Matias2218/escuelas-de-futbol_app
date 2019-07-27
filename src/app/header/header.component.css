@@ -1,0 +1,20 @@
+.sc-main{
+  background: linear-gradient(to bottom right, rgba(39, 46, 88,0.7),rgba(39, 46, 88,0.7), rgba(39, 46, 88,0.7)), no-repeat 30% 30% !important;
+  background-size: cover !important;
+  position: relative;
+}
+
+.sc-main.segment{
+  min-height: 100vh;
+}
+
+.sc-header-content{
+  position:absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+}
+
+
+

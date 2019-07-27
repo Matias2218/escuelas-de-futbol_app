@@ -1,0 +1,42 @@
+.pad-footer{
+  padding-top: 20px !important;
+}
+
+.icon-color{
+  color: rgba(209, 62, 49, 0.8);
+}
+.icon-color:hover{
+  color: rgba(209, 62, 49, 1);
+}
+
+.titulos-footer{
+  color: rgba(255, 255, 255, 1);
+}
+
+.titulos-footer:hover{
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.a-blanco{
+  color: rgba(209, 62, 49, 0.8);
+}
+
+.a-blanco:hover{
+  color: rgba(209, 62, 49, 1);
+}
+
+.pad-footer-b{
+  padding-bottom: 20px !important;
+}
+
+.div-color{
+  background-color: white !important;
+}
+
+.footer-color{
+  background-color: rgb(27, 33, 50) !important;
+}
+
+.color{
+  color: grey;
+}

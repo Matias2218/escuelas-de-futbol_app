@@ -1,0 +1,17 @@
+.pointer-mano{
+  cursor: pointer;
+}
+
+.mar-top{
+  margin-top: 2%;
+}
+
+.sc-imagen{
+  background: linear-gradient(to bottom right, rgba(39, 46, 88,0.7),rgba(39, 46, 88,0.7), rgba(39, 46, 88,0.7)), no-repeat 30% 30% !important;
+  background-size: cover !important;
+  position: relative;
+}
+
+.sc-imagen.segment{
+  min-height: 40vh;
+}

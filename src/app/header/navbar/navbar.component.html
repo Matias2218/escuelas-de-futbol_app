@@ -1,0 +1,44 @@
+<!--<div id="divblack" class="following bar" #divElement>
+  <div class="ui container">
+    <nav>
+      <input type="checkbox" id="nav" class="hidden">
+      <label for="nav" class="nav-btn">
+        <i></i>
+        <i></i>
+        <i></i>
+      </label>
+      <div class="logo pad">
+        <a routerLink="/">FutbolChile</a>
+      </div>
+      <div class="nav-wrapper">
+        <ul>
+          <li><a routerLink="/">Inicio</a></li>
+          <li><a routerLink="/">Escuelas</a></li>
+          <li><a routerLink="/suscripciones">Servicios</a></li>
+          <li><a routerLink="/nosotros">Nosotros</a></li>
+          <li><a routerLink="/">Contáctenos</a></li>
+          <li><a [ngStyle]="{'cursor': 'pointer'}" (click)="open('Login')">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>-->
+
+
+
+
+
+<!--Modal de Inicio Sesion-->
+<ng-template let-context let-modal="modal" #modalTemplate>
+  <div class="header">Example</div>
+  <div class="content">
+    <p>{{ context.data }}</p>
+  </div>
+  <div class="actions">
+    <button class="ui red button" (click)="modal.deny('denied')">Cancel</button>
+    <button class="ui green button" (click)="modal.approve('approved')" autofocus>OK</button>
+  </div>
+</ng-template>
+
+
+
