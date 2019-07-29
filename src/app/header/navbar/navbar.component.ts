@@ -19,26 +19,20 @@ export interface IContext {
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
-export class NavbarComponent implements OnInit, AfterViewInit {
+export class NavbarComponent implements OnInit {
 
   @ViewChild('divElement', {static: false}) div: ElementRef;
-  @ViewChild('modalTemplate', {static: false})
+  @ViewChild('modalTemplate', {static: false}) public modalTemplate: ModalTemplate<IContext, string, string>;
 
   scrHeight: any;
   scrWidth: any;
   esResponsivo = false;
-
-  public modalTemplate: ModalTemplate<IContext, string, string>;
 
   constructor(private renderer: Renderer2, private modalService: SuiModalService) {
   }
 
   ngOnInit() {
     scroll();
-  }
-
-  ngAfterViewInit(): void {
-    // Decidir el nav a utlizar
     this.getScreenSize();
   }
 
@@ -67,7 +61,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
 
     config.closeResult = 'closed!';
     config.context = {data: dynamicContent};
-
+    config.size = 'mini';
     this.modalService
       .open(config)
       .onApprove(result => {
