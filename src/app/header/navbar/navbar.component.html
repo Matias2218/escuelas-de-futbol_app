@@ -3,11 +3,11 @@
     <div class="ui large secondary inverted pointed fixed menu">
       <a class="item sin-hover">ESCUELAS FUTBOL</a>
       <div class="right item">
-        <a class="item">Contactenos</a>
-        <a class="item">Escuelas</a>
-        <a class="item">Servicios</a>
-        <a class="item">Nosotros</a>
-        <a class="item" (click)="open('ejemplo')">Login</a>
+        <a routerLink="/" routerLinkActive='active' [routerLinkActiveOptions] = "{exact: true}" class="item">Contactenos</a>
+        <a routerLink="/" class="item">Escuelas</a>
+        <a routerLink="/" class="item">Servicios</a>
+        <a routerLink="/nosotros" routerLinkActive='active' class="item">Nosotros</a>
+        <a routerLink="/" class="item" (click)="open('ejemplo')">Login</a>
       </div>
     </div>
   </div>
@@ -26,26 +26,37 @@
     </div>
   </div>
 
-  <div [suiCollapse]="!collapse" class="nav-mobile">
+  <div [suiCollapse]="!collapse" class="following bar nav-mobile">
     <div class="ui segments">
-      <div class="ui segment color-drop">
-        <p>Top</p>
-      </div>
-      <div class="ui segment color-drop">
-        <p>Middle</p>
-      </div>
-      <div class="ui segment color-drop">
-        <p>Middle</p>
-      </div>
-      <div class="ui segment color-drop">
-        <p>Middle</p>
-      </div>
-      <div class="ui segment color-drop">
-        <p>Bottom</p>
-      </div>
+      <a routerLink="/">
+        <div class="ui segment drop-nav-items">
+          <p>Contactenos</p>
+        </div>
+      </a>
+      <a routerLink="/">
+        <div class="ui segment drop-nav-items">
+          <p>Escuelas</p>
+        </div>
+      </a>
+      <a routerLink="/">
+        <div class="ui segment drop-nav-items">
+          <p>Servicios</p>
+        </div>
+      </a>
+      <a routerLink="/nosotros">
+        <div class="ui segment drop-nav-items">
+          <p>Nosotros</p>
+        </div>
+      </a>
+      <a routerLink="/">
+        <div class="ui segment drop-nav-items">
+          <p>Login</p>
+        </div>
+      </a>
     </div>
   </div>
 </ng-template>
+
 <!--Modal de Inicio Sesion-->
 <ng-template let-context let-modal="modal" #modalTemplate>
   <div class="header">

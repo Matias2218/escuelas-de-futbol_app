@@ -48,9 +48,9 @@ export class NavbarComponent implements OnInit {
   getScreenSize(event?) {
     this.scrHeight = window.innerHeight;
     this.scrWidth = window.innerWidth;
-    if (this.scrWidth <= '800') {
+    if (this.scrWidth <= '840') {
       this.esResponsivo = true;
-    } else if (this.scrWidth > '800') {
+    } else if (this.scrWidth > '840') {
       this.esResponsivo = false;
     }
   }

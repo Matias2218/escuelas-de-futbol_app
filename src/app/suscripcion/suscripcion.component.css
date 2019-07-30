@@ -15,3 +15,7 @@
 .sc-imagen.segment{
   min-height: 40vh;
 }
+
+.blue{
+  border-top: 2px solid rgb(39, 46, 88)!important;
+}
