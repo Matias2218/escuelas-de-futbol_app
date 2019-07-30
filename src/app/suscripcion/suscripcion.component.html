@@ -1,113 +1,94 @@
+
 <div class="pusher">
   <div class="ui vertical sc-imagen center aligned segment">
     <app-navbar></app-navbar>
 
   </div>
 </div>
+<br>
 <h2 class="ui center aligned header">Elige tu plan de suscripción</h2>
-<sui-tabset>
-  <div class="ui three column doubling stackable grid container">
-    <div class="column pointer-mano" suiTabHeader="1" (click)="elegirPlan('basico')">
-      <div class="ui segment">
-        <div class="ui top attached red label">3 MESES GRATIS</div>
+
+<div class="ui three column doubling stackable grid container">
+
+    <div class="column">
+      <div class="ui darkblue raised segment">
+        <div class="ui red ribbon label">3 MESES GRATIS</div>
         <div class="ui list">
           <div class="item"><h3 class="ui header">Plan básico</h3></div>
           <div class="item"><h3 class="ui header">$ 10.000</h3></div>
           <div class="item"><p>Mensuales</p></div>
         </div>
+        <sui-accordion>
+            <sui-accordion-panel>
+                <div title><i class="dropdown icon"></i>Ver Detalle</div>
+                <div content>
+                    <p>Add classes to the <code>sui-accordion</code> element to apply styles.</p>
+                    <p>Add classes to the <code>sui-accordion</code> element to apply styles.</p>
+                    <p>Add classes to the <code>sui-accordion</code> element to apply styles.</p>
+                    <p>Add classes to the <code>sui-accordion</code> element to apply styles.</p>
+                    <p>Add classes to the <code>sui-accordion</code> element to apply styles.</p>
+                    <p>Add classes to the <code>sui-accordion</code> element to apply styles.</p>
+                </div>
+            </sui-accordion-panel>
+        </sui-accordion>
       </div>
     </div>
-    <div class="column pointer-mano" suiTabHeader="2" (click)="elegirPlan('medio')">
-      <div class="ui segment">
-        <div class="ui top attached red label">3 MESES GRATIS</div>
+   
+    <div class="column">
+      <div class="ui darkblue raised segment">
+        <div class="ui red ribbon label">3 MESES GRATIS</div>
         <div class="ui list">
           <div class="item"><h3 class="ui header">Plan medio</h3></div>
           <div class="item"><h3 class="ui header">$ 15.000</h3></div>
           <div class="item"><p>Mensuales</p></div>
+
         </div>
+        <sui-accordion>
+            <sui-accordion-panel>
+                <div title><i class="dropdown icon"></i>Ver Detalle</div>
+                <div content>
+                    <p>Add classes to the <code>sui-accordion</code> element to apply styles.</p>
+                    <p>Add classes to the <code>sui-accordion</code> element to apply styles.</p>
+                    <p>Add classes to the <code>sui-accordion</code> element to apply styles.</p>
+                    <p>Add classes to the <code>sui-accordion</code> element to apply styles.</p>
+                    <p>Add classes to the <code>sui-accordion</code> element to apply styles.</p>
+                    <p>Add classes to the <code>sui-accordion</code> element to apply styles.</p>
+                </div>
+            </sui-accordion-panel>
+        </sui-accordion>
       </div>
     </div>
-    <div class="column pointer-mano" suiTabHeader="3" (click)="elegirPlan('total')">
-      <div class="ui segment">
-        <div class="ui top attached red label">3 MESES GRATIS</div>
+
+
+    <div class="column">
+      <div class="ui darkblue raised segment">
+        <div class="ui red ribbon label">3 MESES GRATIS</div>
         <div class="ui list">
           <div class="item"><h3 class="ui header">Plan total</h3></div>
           <div class="item"><h3 class="ui header">$ 20.000</h3></div>
           <div class="item"><p>Mensuales</p></div>
         </div>
+        <sui-accordion>
+            <sui-accordion-panel>
+                <div title><i class="dropdown icon"></i>Ver Detalle</div>
+                <div content>
+                    <p>Add classes to the <code>sui-accordion</code> element to apply styles.</p>
+                    <p>Add classes to the <code>sui-accordion</code> element to apply styles.</p>
+                    <p>Add classes to the <code>sui-accordion</code> element to apply styles.</p>
+                    <p>Add classes to the <code>sui-accordion</code> element to apply styles.</p>
+                    <p>Add classes to the <code>sui-accordion</code> element to apply styles.</p>
+                    <p>Add classes to the <code>sui-accordion</code> element to apply styles.</p>
+                </div>
+            </sui-accordion-panel>
+        </sui-accordion>
       </div>
     </div>
-  </div>
-  <div class="ui container mar-top" suiTabContent="1">
-    <div class="ui segments">
-      <div class="ui raised segment">
-        <div class="ui list">
-          <div class="item"><h3 class="ui header">Plan básico</h3></div>
-          <div class="item"><h3 class="ui header">$10.000</h3></div>
-          <div class="item"><p>Mensuales</p></div>
-          <div class="ui inverted section divider"></div>
-          <div class="ui container">
-            <div class="item">
-              <i class="icon check"></i><label>Ejemplo 1</label>
-            </div>
-            <div class="item">
-              <i class="icon x"></i><label>Ejemplo 2</label>
-            </div>
-            <div class="item">
-              <i class="icon x"></i><label>Ejemplo 3</label>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="ui container mar-top" suiTabContent="2">
-    <div class="ui segments">
-      <div class="ui raised segment">
-        <div class="ui list">
-          <div class="item"><h3 class="ui header">Plan medio</h3></div>
-          <div class="item"><h3 class="ui header">$15.000</h3></div>
-          <div class="item"><p>Mensuales</p></div>
-          <div class="ui inverted section divider"></div>
-          <div class="ui container">
-            <div class="item">
-              <i class="icon check"></i><label>Ejemplo 1</label>
-            </div>
-            <div class="item">
-              <i class="icon check"></i><label>Ejemplo 2</label>
-            </div>
-            <div class="item">
-              <i class="icon x"></i><label>Ejemplo 3</label>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="ui container mar-top" suiTabContent="3">
-    <div class="ui segments">
-      <div class="ui raised segment">
-        <div class="ui list">
-          <div class="item"><h3 class="ui header">Plan total</h3></div>
-          <div class="item"><h3 class="ui header">$20.000</h3></div>
-          <div class="item"><p>Mensuales</p></div>
-          <div class="ui inverted section divider"></div>
-          <div class="ui container">
-            <div class="item">
-              <i class="icon check"></i><label>Ejemplo 1</label>
-            </div>
-            <div class="item">
-              <i class="icon check"></i><label>Ejemplo 2</label>
-            </div>
-            <div class="item">
-              <i class="icon check"></i><label>Ejemplo 3</label>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</sui-tabset>
-<div class="ui text container mar-top">
-  <button class="fluid ui grey button">SUSCRIBIRSE</button>
+
 </div>
+<br>
+
+
+
+  
+  
+
