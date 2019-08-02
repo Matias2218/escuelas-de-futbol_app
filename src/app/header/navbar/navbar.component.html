@@ -7,19 +7,19 @@
         <a routerLink="/" class="item">Escuelas</a>
         <a routerLink="/" class="item">Servicios</a>
         <a routerLink="/nosotros" routerLinkActive='active' class="item">Nosotros</a>
-        <a routerLink="/" class="item" (click)="open('ejemplo')">Login</a>
+        <a class="item" (click)="open('ejemplo')">Login</a>
       </div>
     </div>
   </div>
 </div>
-<ng-template #responsivo>
 
+<ng-template #responsivo>
   <div class="ui container" #navMovil>
     <div id="divblack" class="following bar mobile" #divElement>
       <div class="ui large secondary inverted pointed fixed menu">
         <a class="item sin-hover">ESCUELAS FUTBOL</a>
         <div class="right item">
-          <a class="item" (click)="collapse = !collapse"><i class="bars icon"></i></a>
+          <a class="item" style="" (click)="collapse = !collapse"><i class="bars icon"></i></a>
         </div>
 
       </div>
@@ -61,20 +61,20 @@
 <ng-template let-context let-modal="modal" #modalTemplate>
   <div class="header">
     <h3 class="ui center aligned header">
-      Inciar Sesion
+      Iniciar Sesion
     </h3>
   </div>
   <div class="content">
     <form class="ui form">
       <div class="field">
         <div class="ui left icon input">
-          <input type="text" name="txtusuario" placeholder="Usuario">
+          <input type="text" name="txtusuario" placeholder="Usuario" [(ngModel)]="rut">
           <i class="user icon"></i>
         </div>
       </div>
       <div class="field">
         <div class="ui left icon input">
-          <input type="text" name="txtclave" placeholder="Contraseña">
+          <input type="password" name="txtclave" placeholder="Contraseña" [(ngModel)]="password">
           <i class="key icon"></i>
         </div>
 
@@ -82,7 +82,6 @@
     </form>
   </div>
   <div class="actions">
-    <button class="ui red button" (click)="modal.deny('denied')">Cancelar</button>
-    <button class="ui green button" (click)="modal.approve('approved')" autofocus>Iniciar Sesion</button>
+    <button class="ui green button" (click)="modal.approve()" autofocus>Iniciar Sesion</button>
   </div>
 </ng-template>

@@ -9,6 +9,11 @@ import { ContactenosComponent } from './contactenos/contactenos.component';
 import { SuscripcionComponent } from './suscripcion/suscripcion.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import {AppRoutingModule} from './app-routing.module';
+import { ApoderadoComponent } from './apoderado/apoderado.component';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from "@angular/common/http";
+import { ProfesorComponent } from './profesor/profesor.component';
+import { AdministradorComponent } from './administrador/administrador.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +23,17 @@ import {AppRoutingModule} from './app-routing.module';
     FooterComponent,
     ContactenosComponent,
     SuscripcionComponent,
-    NosotrosComponent
+    NosotrosComponent,
+    ApoderadoComponent,
+    ProfesorComponent,
+    AdministradorComponent
   ],
   imports: [
     BrowserModule,
     SuiModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

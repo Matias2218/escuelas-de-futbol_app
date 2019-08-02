@@ -1,6 +1,4 @@
 import {
-  AfterContentInit,
-  AfterViewInit,
   Component,
   ElementRef,
   HostListener,
@@ -9,6 +7,8 @@ import {
   ViewChild
 } from '@angular/core';
 import {ModalTemplate, SuiModalService, TemplateModalConfig} from 'ng2-semantic-ui';
+import {ActivatedRoute, Router} from '@angular/router';
+import {LoginService} from '../../shared/services/login.service';
 
 export interface IContext {
   data: string;
@@ -24,11 +24,15 @@ export class NavbarComponent implements OnInit {
   @ViewChild('divElement', {static: false}) div: ElementRef;
   @ViewChild('modalTemplate', {static: false}) public modalTemplate: ModalTemplate<IContext, string, string>;
 
+
   scrHeight: any;
   scrWidth: any;
   esResponsivo = false;
+  rut: string;
+  password: string;
 
-  constructor(private renderer: Renderer2, private modalService: SuiModalService) {
+  constructor(private renderer: Renderer2, private modalService: SuiModalService,
+              private router: Router, private route: ActivatedRoute, private loginService: LoginService) {
   }
 
   ngOnInit() {
@@ -36,6 +40,7 @@ export class NavbarComponent implements OnInit {
     this.getScreenSize();
   }
 
+  // Metodo de colores  de navbar segun el movimiento
   @HostListener('window:scroll') scroll() {
     if (window.scrollX === 0 && window.scrollY === 0) {
       this.renderer.removeClass(this.div.nativeElement, 'greysi');
@@ -43,7 +48,7 @@ export class NavbarComponent implements OnInit {
       this.renderer.addClass(this.div.nativeElement, 'greysi');
     }
   }
-
+ // Metodo responsable de ajustar el navbar responsivamente
   @HostListener('window:resize', ['$event'])
   getScreenSize(event?) {
     this.scrHeight = window.innerHeight;
@@ -55,20 +60,24 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-
-  open(dynamicContent: string = 'Example') {
+  // Metodo responsable de abrir el modal y configurarlo
+  open() {
     const config = new TemplateModalConfig<IContext, string, string>(this.modalTemplate);
-
-    config.closeResult = 'closed!';
-    config.context = {data: dynamicContent};
-    config.size = 'mini';
+    this.rut = '';
+    this.password  = '';
+    config.size = 'tiny';
     this.modalService
       .open(config)
-      .onApprove(result => {
-        console.log('aprobado');
-      })
-      .onDeny(result => {
-        console.log('rechazado');
+      .onApprove( () => {
+        if (this.rut === 'apoderado' && this.password === 'apoderado') {
+          this.router.navigate(['/apoderados'], {relativeTo: this.route});
+        } else if (this.rut === 'profesor' && this.password === 'profesor') {
+          this.router.navigate(['/profesores'], {relativeTo: this.route});
+        } else if (this.rut === 'admin' && this.password === 'admin') {
+          this.router.navigate(['/administradores'], {relativeTo: this.route});
+        } else {
+          console.log('error');
+        }
       });
   }
 
