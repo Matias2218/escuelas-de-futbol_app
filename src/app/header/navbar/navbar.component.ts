@@ -69,15 +69,13 @@ export class NavbarComponent implements OnInit {
     this.modalService
       .open(config)
       .onApprove( () => {
-        if (this.rut === 'apoderado' && this.password === 'apoderado') {
-          this.router.navigate(['/apoderados'], {relativeTo: this.route});
-        } else if (this.rut === 'profesor' && this.password === 'profesor') {
-          this.router.navigate(['/profesores'], {relativeTo: this.route});
-        } else if (this.rut === 'admin' && this.password === 'admin') {
-          this.router.navigate(['/administradores'], {relativeTo: this.route});
-        } else {
-          console.log('error');
-        }
+        this.loginService.loginAdmin(this.rut, this.password).subscribe( data => {
+          console.log(data);
+        },
+          error => {
+          console.log(error);
+          }
+          );
       });
   }
 

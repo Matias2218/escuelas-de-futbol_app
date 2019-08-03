@@ -1,6 +1,6 @@
 import {PersonaModel} from './persona.model';
 
-export class ProfesorModel extends PersonaModel{
+export class ProfesorModel extends PersonaModel {
 
   // tslint:disable-next-line:variable-name
   private _correo: string;
