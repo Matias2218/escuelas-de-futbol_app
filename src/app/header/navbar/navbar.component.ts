@@ -9,6 +9,7 @@ import {
 import {ModalTemplate, SuiModalService, TemplateModalConfig} from 'ng2-semantic-ui';
 import {ActivatedRoute, Router} from '@angular/router';
 import {LoginService} from '../../shared/services/login.service';
+import swal from 'sweetalert2';
 
 export interface IContext {
   data: string;
@@ -48,7 +49,8 @@ export class NavbarComponent implements OnInit {
       this.renderer.addClass(this.div.nativeElement, 'greysi');
     }
   }
- // Metodo responsable de ajustar el navbar responsivamente
+
+  // Metodo responsable de ajustar el navbar responsivamente
   @HostListener('window:resize', ['$event'])
   getScreenSize(event?) {
     this.scrHeight = window.innerHeight;
@@ -64,19 +66,39 @@ export class NavbarComponent implements OnInit {
   open() {
     const config = new TemplateModalConfig<IContext, string, string>(this.modalTemplate);
     this.rut = '';
-    this.password  = '';
+    this.password = '';
     config.size = 'tiny';
+    config.isClosable = true;
     this.modalService
       .open(config)
-      .onApprove( () => {
-        this.loginService.loginAdmin(this.rut, this.password).subscribe( data => {
-          console.log(data);
-        },
-          error => {
-          console.log(error);
-          }
-          );
+      .onApprove(() => {
+        this.loginService.loginApod(this.rut, this.password).subscribe(value => {
+          console.log(value);
+        }, error => {
+          this.loginService.loginProf(this.rut, this.password).subscribe( value => {
+            console.log(value);
+          }, error1 => {
+            this.loginService.loginAdmin(this.rut, this.password).subscribe( value => {
+              console.log(value);
+            },
+              error2 => {
+                swal.fire({
+                  type: 'error',
+                  title: 'Credenciales invalidas',
+                  text: 'Ingrese sus datos nuevamente',
+                  confirmButtonText: 'OK',
+                }).then((result) => {
+                  if (result.value) {
+                    this.open();
+                  }
+                });
+              });
+            });
+        });
       });
   }
-
 }
+
+
+
+
