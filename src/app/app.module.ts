@@ -11,9 +11,11 @@ import { NosotrosComponent } from './nosotros/nosotros.component';
 import {AppRoutingModule} from './app-routing.module';
 import { ApoderadoComponent } from './apoderado/apoderado.component';
 import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from '@angular/common/http';
 import { ProfesorComponent } from './profesor/profesor.component';
 import { AdministradorComponent } from './administrador/administrador.component';
+import {Ng2Rut} from 'ng2-rut';
+
 
 @NgModule({
   declarations: [
@@ -26,14 +28,15 @@ import { AdministradorComponent } from './administrador/administrador.component'
     NosotrosComponent,
     ApoderadoComponent,
     ProfesorComponent,
-    AdministradorComponent
+    AdministradorComponent,
   ],
   imports: [
     BrowserModule,
     SuiModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2Rut
   ],
   providers: [],
   bootstrap: [AppComponent]

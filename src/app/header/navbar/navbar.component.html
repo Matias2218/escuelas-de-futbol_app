@@ -5,13 +5,15 @@
       <div class="right item">
         <a routerLink="/" routerLinkActive='active' [routerLinkActiveOptions] = "{exact: true}" class="item">Contactenos</a>
         <a routerLink="/" class="item">Escuelas</a>
-        <a routerLink="/" class="item">Servicios</a>
+        <a class="item">Servicios</a>
         <a routerLink="/nosotros" routerLinkActive='active' class="item">Nosotros</a>
-        <a class="item" (click)="open('ejemplo')">Login</a>
+        <a class="item" (click)="open()">Login</a>
       </div>
     </div>
   </div>
 </div>
+
+
 
 <ng-template #responsivo>
   <div class="ui container" #navMovil>
@@ -26,6 +28,7 @@
     </div>
   </div>
 
+
   <div [suiCollapse]="!collapse" class="following bar nav-mobile">
     <div class="ui segments">
       <a routerLink="/">
@@ -38,7 +41,7 @@
           <p>Escuelas</p>
         </div>
       </a>
-      <a routerLink="/">
+      <a>
         <div class="ui segment drop-nav-items">
           <p>Servicios</p>
         </div>
@@ -48,7 +51,7 @@
           <p>Nosotros</p>
         </div>
       </a>
-      <a routerLink="/">
+      <a (click)="open()">
         <div class="ui segment drop-nav-items">
           <p>Login</p>
         </div>
@@ -64,24 +67,76 @@
       Iniciar Sesion
     </h3>
   </div>
-  <div class="content">
-    <form class="ui form">
-      <div class="field">
+
+  <div class="ui content" *ngIf="!modalActivo">
+    <div class="ui center aligned basic segment">
+      <div class="ui two column divided grid">
+        <div class="row">
+          <div class="column">
+            <a class="ui card bluee" (click)="nextModal('Administrador')">
+              <div class="content">
+                <div class="meta">
+                  <h3 class="white">Administrador</h3>
+                </div>
+              </div>
+
+            </a>
+          </div>
+          <div class="column">
+            <a class="ui card" (click)="nextModal('Profesor')">
+              <div class="content">
+                <div class="meta">
+                  <h3>Profesor</h3>
+                </div>
+              </div>
+
+            </a>
+          </div>
+
+        </div>
+      </div>
+      <div class="ui horizontal divider">
+        O
+      </div>
+      <div class="ui center aligned basic segment">
+        <a class="ui card redd" style="width: 100%;" (click)="nextModal('Apoderado')">
+          <div class="content" >
+            <div class="meta">
+              <h3 class="white">Apoderado</h3>
+            </div>
+          </div>
+
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="content" #inputs *ngIf="modalActivo">
+    <form class="ui form" (ngSubmit)="modal.approve()" #f="ngForm">
+      <div class="field" [ngClass]="{'error': inputRut.touched && !inputRut.valid}">
         <div class="ui left icon input">
-          <input type="text" name="txtusuario" placeholder="Usuario" [(ngModel)]="rut">
+          <input type="text" ngModel name="txtRut" minlength="8" maxlength="9" placeholder="Rut" validateRut formatRut required #inputRut="ngModel" >
           <i class="user icon"></i>
         </div>
       </div>
-      <div class="field">
-        <div class="ui left icon input">
-          <input type="password" name="txtclave" placeholder="Contraseña" [(ngModel)]="password">
-          <i class="key icon"></i>
-        </div>
-
+      <div class="field" [ngClass]="{'error': inputClave.touched && !inputClave.valid}">
+      <div class="ui left icon input">
+        <input type="password" ngModel name="txtClave" placeholder="Contraseña" required #inputClave="ngModel">
+        <i class="key icon"></i>
+      </div>
+    </div>
+      <div class="actions">
+        <input type="submit" class="ui green button" [disabled]="!f.valid"  autofocus value="Iniciar Sesion">
       </div>
     </form>
   </div>
-  <div class="actions">
-    <input type="button" class="ui green button"  (click)="modal.approve()" autofocus  value="Iniciar Sesion">
-  </div>
+
+</ng-template>
+
+
+
+
+<!--Modal de Cargando-->
+<ng-template let-context let-modal="modal" #modalCargar>
+  <div class="ui medium text loader">Cargando</div>
 </ng-template>

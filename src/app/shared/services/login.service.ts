@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {forkJoin, Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,4 @@ export class LoginService {
     formData.append('clave', password);
     return this.httpClient.post(this.urlApod, formData);
   }
-
-
 }

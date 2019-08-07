@@ -1,4 +1,6 @@
 import {PersonaModel} from './persona.model';
+import {AlumnoModel} from "./alumno.model";
+import {Observable} from "rxjs";
 
 export class AdministradorModel  extends PersonaModel {
   // tslint:disable-next-line:variable-name
