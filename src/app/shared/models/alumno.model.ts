@@ -8,12 +8,11 @@ export class AlumnoModel extends PersonaModel {
 
 
   constructor(id: number, nombre: string, apellido: string, telefono: string,
-              clave: string, estado: boolean, apoderadoId: number, divisionId: number) {
-    super(id, nombre, apellido, telefono, clave, estado);
+              estado: boolean, apoderadoId: number, divisionId: number) {
+    super(id, nombre, apellido, telefono, estado);
     this._apoderadoId = apoderadoId;
     this._divisionId = divisionId;
   }
-
 
   get apoderadoId(): number {
     return this._apoderadoId;

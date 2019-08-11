@@ -15,6 +15,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { ProfesorComponent } from './profesor/profesor.component';
 import { AdministradorComponent } from './administrador/administrador.component';
 import {Ng2Rut} from 'ng2-rut';
+import {LoadingModalComponent} from './shared/components/loading-modal.component';
 
 
 @NgModule({
@@ -29,7 +30,9 @@ import {Ng2Rut} from 'ng2-rut';
     ApoderadoComponent,
     ProfesorComponent,
     AdministradorComponent,
+    LoadingModalComponent
   ],
+  entryComponents: [LoadingModalComponent],
   imports: [
     BrowserModule,
     SuiModule,

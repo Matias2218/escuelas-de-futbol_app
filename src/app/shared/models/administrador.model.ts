@@ -11,9 +11,9 @@ export class AdministradorModel  extends PersonaModel {
   private _tipoAdmin: boolean;
 
 
-  constructor(id: number, nombre: string, apellido: string, telefono: string,
-              clave: string, estado: boolean, correo: string, escuelaId: number, tipoAdmin: boolean) {
-    super(id, nombre, apellido, telefono, clave, estado);
+  constructor(id?: number, nombre?: string, apellido?: string, telefono?: string,
+              estado?: boolean, correo?: string, escuelaId?: number, tipoAdmin?: boolean) {
+    super(id, nombre, apellido, telefono, estado);
     this._correo = correo;
     this._escuelaId = escuelaId;
     this._tipoAdmin = tipoAdmin;

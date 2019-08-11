@@ -8,17 +8,14 @@ export class PersonaModel {
   // tslint:disable-next-line:variable-name
   private _telefono: string;
   // tslint:disable-next-line:variable-name
-  private _clave: string;
-  // tslint:disable-next-line:variable-name
   private _estado: boolean;
 
 
-  constructor(id: number, nombre: string, apellido: string, telefono: string, clave: string, estado: boolean) {
+  constructor(id?: number, nombre?: string, apellido?: string, telefono?: string, estado?: boolean) {
     this._id = id;
     this._nombre = nombre;
     this._apellido = apellido;
     this._telefono = telefono;
-    this._clave = clave;
     this._estado = estado;
   }
 
@@ -53,15 +50,6 @@ export class PersonaModel {
   set telefono(value: string) {
     this._telefono = value;
   }
-
-  get clave(): string {
-    return this._clave;
-  }
-
-  set clave(value: string) {
-    this._clave = value;
-  }
-
   get estado(): boolean {
     return this._estado;
   }

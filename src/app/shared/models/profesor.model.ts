@@ -5,8 +5,8 @@ export class ProfesorModel extends PersonaModel {
   // tslint:disable-next-line:variable-name
   private _correo: string;
 
-  constructor(id: number, nombre: string, apellido: string, telefono: string, clave: string, estado: boolean, correo: string) {
-    super(id, nombre, apellido, telefono, clave, estado);
+  constructor(id: number, nombre: string, apellido: string, telefono: string, estado: boolean, correo: string) {
+    super(id, nombre, apellido, telefono, estado);
     this._correo = correo;
   }
 
